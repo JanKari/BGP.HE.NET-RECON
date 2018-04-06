@@ -279,6 +279,7 @@ def randomUserAgent(verbose):
 	newUserAgent = USERAGENTS[random.randint(0,len(USERAGENTS)-1)]
 	if verbose:
 		print_warning("Using \"%s\" as the User-Agent..." % newUserAgent)
+	return newUserAgent
 
 def setNewProxy(chromeBrowser, verbose):
 	global proxySet, usedProxies
