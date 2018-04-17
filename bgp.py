@@ -1,8 +1,14 @@
-import argparse, csv, json, os, pprint, Queue, random, requests, selenium, string, sys, time
+import argparse, csv, json, os, pprint, Queue, random, string, sys, time
 from datetime import datetime
 from urllib import unquote_plus as urlencode
 
 ### 3RD PARTY IMPORTS
+try:
+	from bs4 import BeautifulSoup
+except:
+	print "[ERROR] Please install the \"bs4\" module!"
+	sys.exit(1)
+
 try:
 	from colorama import Fore, Style
 except:
@@ -10,9 +16,15 @@ except:
 	sys.exit(1)
 
 try:
-	from bs4 import BeautifulSoup
+	import requests
 except:
-	print_error("Please install BeautifulSoup!")
+	print "[ERROR] Please install the \"requests\" module!"
+	sys.exit(1)
+
+try:
+	import selenium
+except:
+	print "[ERROR] Please install the \"selenium\" module!"
 	sys.exit(1)
 
 try:
